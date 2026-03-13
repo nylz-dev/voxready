@@ -104,7 +104,7 @@ function Hero() {
   const fadeUp = (delay: number) => ({
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, delay, ease: "easeOut" },
+    transition: { duration: 0.6, delay, ease: "easeOut" as const },
   });
 
   return (
@@ -593,7 +593,7 @@ function VoxScore() {
                   strokeDasharray={circumference}
                   initial={{ strokeDashoffset: circumference }}
                   animate={isInView ? { strokeDashoffset: offset } : {}}
-                  transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+                  transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" as const }}
                 />
                 <defs>
                   <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -660,7 +660,7 @@ function VoxScore() {
                     transition={{
                       duration: 0.9,
                       delay: 0.4 + i * 0.1,
-                      ease: "easeOut",
+                      ease: "easeOut" as const,
                     }}
                     style={{
                       height: "100%",
