@@ -31,12 +31,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e40af;
+  background: #6d28d9;
   border-radius: 3px;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #818cf8 100%);
+  background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 50%, #a78bfa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

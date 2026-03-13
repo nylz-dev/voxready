@@ -22,9 +22,9 @@ function Nav() {
           onClick={scrollToWaitlist}
           className="px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200"
           style={{
-            background: "linear-gradient(135deg, #2563eb, #1d4ed8)",
-            border: "1px solid rgba(59, 130, 246, 0.4)",
-            boxShadow: "0 0 20px rgba(59, 130, 246, 0.25)",
+            background: "linear-gradient(135deg, #6d28d9, #5b21b6)",
+            border: "1px solid rgba(124, 58, 237, 0.4)",
+            boxShadow: "0 0 20px rgba(124, 58, 237, 0.25)",
           }}
         >
           Rejoindre la bêta
@@ -42,12 +42,12 @@ function Hero() {
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full opacity-10"
-          style={{ background: "radial-gradient(circle, #3b82f6 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #7c3aed 0%, transparent 70%)" }} />
         <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-5"
           style={{ background: "radial-gradient(circle, #818cf8 0%, transparent 70%)" }} />
         {/* Grid lines */}
         <div className="absolute inset-0 opacity-5"
-          style={{ backgroundImage: "linear-gradient(rgba(59,130,246,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.5) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+          style={{ backgroundImage: "linear-gradient(rgba(124,58,237,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.5) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       </div>
 
       <div className="relative max-w-4xl mx-auto">
@@ -58,14 +58,14 @@ function Hero() {
           transition={{ duration: 0.5 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8"
           style={{
-            background: "rgba(59, 130, 246, 0.1)",
-            border: "1px solid rgba(59, 130, 246, 0.3)",
-            color: "#93c5fd",
+            background: "rgba(124, 58, 237, 0.1)",
+            border: "1px solid rgba(124, 58, 237, 0.3)",
+            color: "#c4b5fd",
           }}
         >
-          <span>🎙️</span>
-          <span>Now in Beta</span>
-          <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+          <span>🇫🇷</span>
+          <span>En Bêta</span>
+          <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
         </motion.div>
 
         {/* H1 */}
@@ -75,7 +75,7 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-6xl md:text-8xl font-black mb-6 leading-tight"
         >
-          <span className="text-white">Are you </span>
+          <span className="text-white">Êtes-vous </span>
           <span className="gradient-text">VoxReady</span>
           <span className="text-white">?</span>
         </motion.h1>
@@ -106,8 +106,8 @@ function Hero() {
             rel="noopener noreferrer"
             className="px-8 py-4 rounded-xl text-white font-bold text-lg transition-all duration-200 hover:scale-105 active:scale-95"
             style={{
-              background: "linear-gradient(135deg, #3b82f6, #2563eb)",
-              boxShadow: "0 0 30px rgba(59, 130, 246, 0.4), 0 4px 15px rgba(59, 130, 246, 0.2)",
+              background: "linear-gradient(135deg, #7c3aed, #6d28d9)",
+              boxShadow: "0 0 30px rgba(124, 58, 237, 0.4), 0 4px 15px rgba(124, 58, 237, 0.2)",
             }}
           >
             Commencer l&apos;entraînement →
@@ -204,7 +204,7 @@ function HowItWorks() {
         <div className="relative">
           {/* Connecting line */}
           <div className="hidden md:block absolute top-16 left-1/2 -translate-x-1/2 w-2/3 h-px"
-            style={{ background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.4), transparent)" }} />
+            style={{ background: "linear-gradient(90deg, transparent, rgba(124,58,237,0.4), transparent)" }} />
 
           <div className="grid md:grid-cols-3 gap-8">
             {steps.map((step, i) => (
@@ -215,8 +215,8 @@ function HowItWorks() {
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 className="relative text-center"
               >
-                <div className="glass-card rounded-2xl p-8 h-full transition-all duration-300 hover:border-blue-500/30"
-                  style={{ borderColor: "rgba(59, 130, 246, 0.1)" }}>
+                <div className="glass-card rounded-2xl p-8 h-full transition-all duration-300 hover:border-violet-500/30"
+                  style={{ borderColor: "rgba(124, 58, 237, 0.1)" }}>
                   <div className="text-4xl mb-4">{step.icon}</div>
                   <div className="text-5xl font-black text-blue-500/20 mb-4 font-mono">{step.number}</div>
                   <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
@@ -476,7 +476,7 @@ function Waitlist() {
       {/* BG glow */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-15"
-          style={{ background: "radial-gradient(circle, #3b82f6 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #7c3aed 0%, transparent 70%)" }} />
       </div>
 
       <div className="relative max-w-2xl mx-auto text-center">
@@ -512,7 +512,7 @@ function Waitlist() {
                 key="form"
                 onSubmit={handleSubmit}
                 className="glass-card rounded-2xl p-8"
-                style={{ border: "1px solid rgba(59, 130, 246, 0.2)" }}
+                style={{ border: "1px solid rgba(124, 58, 237, 0.2)" }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
@@ -535,8 +535,8 @@ function Waitlist() {
                     disabled={status === "loading" || !email}
                     className="px-6 py-3 rounded-xl text-white font-bold transition-all duration-200 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                     style={{
-                      background: "linear-gradient(135deg, #3b82f6, #2563eb)",
-                      boxShadow: "0 0 20px rgba(59, 130, 246, 0.35)",
+                      background: "linear-gradient(135deg, #7c3aed, #6d28d9)",
+                      boxShadow: "0 0 20px rgba(124, 58, 237, 0.35)",
                     }}
                   >
                     {status === "loading" ? (
@@ -572,7 +572,7 @@ function Footer() {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="text-slate-500 text-sm text-center md:text-left">
           <span className="text-white font-semibold">Vox<span className="text-blue-400">Ready</span></span>{" "}
-          © 2026 — Propulsé par Gemini 3 Flash · ElevenLabs · LiveKit
+          © 2026 — Propulsé par Groq · ElevenLabs · LiveKit
         </div>
         <div className="flex items-center gap-6 text-sm">
           <a
