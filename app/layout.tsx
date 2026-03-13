@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Entraînez-vous à l'entretien téléphonique avec Sophie, votre IA recruteur. Progressez. Décrochez le poste.",
   keywords: ["entretien téléphonique", "IA", "recrutement", "préparation", "VoxScore"],
   openGraph: {
-    title: "VoxReady — Are you VoxReady?",
+    title: "VoxReady — Êtes-vous VoxReady ?",
     description:
       "Simulez un vrai entretien téléphonique avec une IA recruteur. Entraînez-vous. Progressez. Décrochez le poste.",
     type: "website",

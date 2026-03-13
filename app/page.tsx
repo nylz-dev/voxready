@@ -13,7 +13,7 @@ function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
       style={{ background: "rgba(2, 8, 23, 0.8)", backdropFilter: "blur(20px)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
+      <div className="max-w-5xl mx-auto flex items-center justify-between">
         <div className="text-xl font-bold tracking-tight">
           <span className="text-white">Vox</span>
           <span className="gradient-text">Ready</span>
