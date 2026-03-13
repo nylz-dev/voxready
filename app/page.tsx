@@ -38,7 +38,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-start text-center px-6 pt-32 pb-20 overflow-hidden">
+    <section className="relative flex flex-col items-center text-center px-6 pt-40 pb-32 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full opacity-10"
@@ -144,16 +144,7 @@ function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 rounded-full border-2 border-slate-600 flex items-start justify-center pt-2">
-          <div className="w-1 h-2 rounded-full bg-blue-400" />
-        </div>
-      </motion.div>
+
     </section>
   );
 }
