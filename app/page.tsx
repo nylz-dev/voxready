@@ -515,16 +515,16 @@ function VoxScore() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { margin: "-80px", once: true });
 
-  const radius = 54;
+  const radius = 60;
   const circumference = 2 * Math.PI * radius;
   const scoreValue = 87;
   const offset = circumference - (scoreValue / 100) * circumference;
 
   const bars = [
-    { label: "Communication", value: 90, color: "#3b82f6" },
-    { label: "Structure", value: 82, color: "#818cf8" },
-    { label: "Confiance", value: 88, color: "#06b6d4" },
-    { label: "Pertinence", value: 85, color: "#10b981" },
+    { label: "Communication", value: 90, color: "#3b82f6", insight: "Discours clair et fluide" },
+    { label: "Structure", value: 82, color: "#818cf8", insight: "Méthode STAR bien appliquée" },
+    { label: "Confiance", value: 88, color: "#06b6d4", insight: "Ton assuré, sans hésitations" },
+    { label: "Pertinence", value: 85, color: "#10b981", insight: "Réponses ciblées au poste" },
   ];
 
   return (
@@ -536,18 +536,12 @@ function VoxScore() {
           transition={{ duration: 0.6 }}
           style={{ textAlign: "center", marginBottom: 56 }}
         >
-          <h2
-            style={{
-              fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-              fontWeight: 800,
-              color: "#ffffff",
-              marginBottom: 12,
-            }}
-          >
-            Votre VoxScore
+          <p style={{ color: "#7c3aed", fontWeight: 600, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 12 }}>Votre rapport</p>
+          <h2 style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)", fontWeight: 800, color: "#ffffff", marginBottom: 12 }}>
+            Votre <span className="gradient-text">VoxScore</span>
           </h2>
-          <p style={{ color: "#64748b", fontSize: 16 }}>
-            Une analyse précise de votre performance vocale.
+          <p style={{ color: "#64748b", fontSize: 16, maxWidth: 480, margin: "0 auto" }}>
+            Chaque entretien génère un rapport complet. Voyez où vous excellez, ce qui freine votre progression.
           </p>
         </motion.div>
 
@@ -555,128 +549,80 @@ function VoxScore() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="glass-card"
-          style={{
-            maxWidth: 520,
-            margin: "0 auto",
-            borderRadius: 20,
-            padding: "40px 36px",
-            border: "1px solid rgba(124, 58, 237, 0.2)",
-          }}
+          className="glass-card blue-glow"
+          style={{ maxWidth: 740, margin: "0 auto", borderRadius: 24, padding: "36px 40px", border: "1px solid rgba(124, 58, 237, 0.25)" }}
         >
-          {/* Circular score */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginBottom: 36,
-            }}
-          >
-            <div style={{ position: "relative", width: 140, height: 140 }}>
-              <svg width={140} height={140} style={{ transform: "rotate(-90deg)" }}>
-                <circle
-                  cx={70}
-                  cy={70}
-                  r={radius}
-                  fill="none"
-                  stroke="rgba(255,255,255,0.06)"
-                  strokeWidth={10}
-                />
-                <motion.circle
-                  cx={70}
-                  cy={70}
-                  r={radius}
-                  fill="none"
-                  stroke="url(#scoreGrad)"
-                  strokeWidth={10}
-                  strokeLinecap="round"
-                  strokeDasharray={circumference}
-                  initial={{ strokeDashoffset: circumference }}
-                  animate={isInView ? { strokeDashoffset: offset } : {}}
-                  transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" as const }}
-                />
-                <defs>
-                  <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#7c3aed" />
-                    <stop offset="100%" stopColor="#a78bfa" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <span
-                  style={{ fontSize: 32, fontWeight: 900, color: "#ffffff" }}
-                >
-                  {scoreValue}
-                </span>
-                <span style={{ fontSize: 12, color: "#64748b" }}>/100</span>
-              </div>
+          {/* Card header */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 32, flexWrap: "wrap", gap: 12 }}>
+            <div>
+              <div style={{ fontSize: 16, fontWeight: 700, color: "#ffffff" }}>Entretien — Développeur Frontend</div>
+              <div style={{ fontSize: 13, color: "#64748b", marginTop: 4 }}>Mode Recruteur Bienveillant · 12 min 34s</div>
             </div>
+            <span style={{ padding: "6px 14px", borderRadius: 999, fontSize: 12, fontWeight: 600, background: "rgba(34,197,94,0.12)", color: "#4ade80", border: "1px solid rgba(34,197,94,0.3)" }}>
+              ✓ Partageable sur LinkedIn
+            </span>
           </div>
 
-          {/* Progress bars */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-            {bars.map((bar, i) => (
-              <div key={i}>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    marginBottom: 7,
-                  }}
-                >
-                  <span style={{ fontSize: 13, color: "#94a3b8" }}>
-                    {bar.label}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: 13,
-                      fontWeight: 700,
-                      color: bar.color,
-                    }}
-                  >
-                    {bar.value}%
-                  </span>
-                </div>
-                <div
-                  style={{
-                    height: 6,
-                    borderRadius: 999,
-                    background: "rgba(255,255,255,0.05)",
-                    overflow: "hidden",
-                  }}
-                >
-                  <motion.div
-                    initial={{ width: "0%" }}
-                    animate={isInView ? { width: `${bar.value}%` } : {}}
-                    transition={{
-                      duration: 0.9,
-                      delay: 0.4 + i * 0.1,
-                      ease: "easeOut" as const,
-                    }}
-                    style={{
-                      height: "100%",
-                      borderRadius: 999,
-                      background: bar.color,
-                    }}
+          {/* 2-col layout */}
+          <div style={{ display: "flex", gap: 48, alignItems: "center", flexWrap: "wrap" }}>
+            {/* Circular score */}
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}>
+              <div style={{ position: "relative", width: 156, height: 156 }}>
+                <svg width={156} height={156} style={{ transform: "rotate(-90deg)" }}>
+                  <circle cx={78} cy={78} r={radius} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth={10} />
+                  <motion.circle
+                    cx={78} cy={78} r={radius} fill="none" stroke="url(#scoreGrad)"
+                    strokeWidth={10} strokeLinecap="round"
+                    strokeDasharray={circumference}
+                    initial={{ strokeDashoffset: circumference }}
+                    animate={isInView ? { strokeDashoffset: offset } : {}}
+                    transition={{ duration: 1.4, delay: 0.3, ease: "easeOut" as const }}
                   />
+                  <defs>
+                    <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#7c3aed" />
+                      <stop offset="100%" stopColor="#a78bfa" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+                  <span style={{ fontSize: 40, fontWeight: 900, color: "#ffffff", lineHeight: "1" }}>{scoreValue}</span>
+                  <span style={{ fontSize: 13, color: "#64748b", marginTop: 2 }}>/100</span>
                 </div>
               </div>
-            ))}
+              <div style={{ marginTop: 12, fontSize: 13, color: "#a78bfa", fontWeight: 600 }}>Score Global</div>
+              <div style={{ marginTop: 4, fontSize: 11, color: "#64748b", textAlign: "center", maxWidth: 120 }}>Top 15% des candidats</div>
+            </div>
+
+            {/* Progress bars */}
+            <div style={{ flex: 1, minWidth: 260, display: "flex", flexDirection: "column", gap: 20 }}>
+              {bars.map((bar, i) => (
+                <div key={i}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, alignItems: "flex-start" }}>
+                    <div>
+                      <div style={{ fontSize: 14, color: "#e2e8f0", fontWeight: 600 }}>{bar.label}</div>
+                      <div style={{ fontSize: 11, color: "#64748b", marginTop: 2 }}>{bar.insight}</div>
+                    </div>
+                    <span style={{ fontSize: 15, fontWeight: 800, color: bar.color, flexShrink: 0, marginLeft: 12 }}>{bar.value}%</span>
+                  </div>
+                  <div style={{ height: 8, borderRadius: 999, background: "rgba(255,255,255,0.05)", overflow: "hidden" }}>
+                    <motion.div
+                      initial={{ width: "0%" }}
+                      animate={isInView ? { width: `${bar.value}%` } : {}}
+                      transition={{ duration: 1, delay: 0.5 + i * 0.12, ease: "easeOut" as const }}
+                      style={{ height: "100%", borderRadius: 999, background: `linear-gradient(90deg, ${bar.color}, ${bar.color}99)` }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
     </section>
   );
 }
+
 
 // ─── Waitlist ─────────────────────────────────────────────────────────────────
 
