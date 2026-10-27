@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.voxready.fr"),
+  alternates: { canonical: "/" },
   title: "VoxReady — Simulateur d'entretien téléphonique IA",
   description:
     "Entraînez-vous à l'entretien téléphonique avec Sophie, votre IA recruteur. Progressez. Décrochez le poste.",
